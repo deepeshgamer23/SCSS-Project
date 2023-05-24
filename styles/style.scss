@@ -1,0 +1,120 @@
+@import 'color';
+@import 'navbar';
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.hero {
+    background-color: $white;
+
+    &_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        height: 130vh;
+        width: 100%;
+        max-width: 1200px;
+        z-index: 10;
+        padding-right: 24px;
+        padding-left: 24px;
+
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+
+        &--left {
+            width: 100%;
+            line-height: 1.2;
+
+            @include tablet {
+                padding: 5rem 0;
+            }
+
+            @include mobile {
+                line-height: 1.5;
+            }
+
+             h1 {
+                font-size: 4rem;
+                color: $lime;
+
+                @include mobile {
+                    font-size: 1.5rem;
+                }
+            }
+
+            h2 {
+                font-size: 4rem;
+                color: $black;
+
+                @include mobile {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+                color: $black;
+                font-weight: 700;
+                margin-top: 1rem;
+
+                @include mobile {
+                    font-size: 1.5rem;
+                }
+            }
+
+
+        }
+
+        &--btn {
+            position: relative;
+            font-size: 1rem;
+            background-color: $lime;
+            padding: 14px 32px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            color: $white;
+            margin-top: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        &--btn::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $orangeRed;
+            transition: all .3s;
+            border-radius: 4px;
+        }
+
+        &--btn:hover::before{
+            width: 100%;
+            z-index: -2;
+        }
+
+        &--right{
+            text-align: center;
+        }
+
+        &--img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
